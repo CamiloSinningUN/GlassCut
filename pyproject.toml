@@ -1,11 +1,25 @@
 [project]
 name = "glasscut"
 version = "0.1.0"
-description = "Add your description here"
+description = "A toolkit for preprocessing and analyzing whole slide images combining approaches from Histolab and PathoPatcher with GPU acceleration via CuCim"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "numpy>=2.2.6",
     "openslide-bin>=4.0.0.13",
     "openslide-python>=1.4.3",
+    "scikit-image>=0.25.2",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.1",
+    "mypy>=1.20.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.11",
+]
+gpu = [
+    "cucim>=23.10.0",
+    "cupy-cuda12x>=14.0.1",
 ]
